@@ -182,22 +182,22 @@
         }
 
         .hero-left .logo-name {
-            font-size: 22px;
-            font-weight: 700;
+            font-size: 18px;
+            font-weight: 600;
             color: white;
         }
 
         .hero-left h1 {
-            font-size: 36px;
-            font-weight: 800;
+            font-size: 28px;
+            font-weight: 700;
             line-height: 1.2;
             margin-bottom: 16px;
         }
 
         .hero-left p {
-            font-size: 16px;
+            font-size: 14px;
             opacity: 0.9;
-            margin-bottom: 32px;
+            margin-bottom: 24px;
             line-height: 1.6;
         }
 
@@ -214,12 +214,12 @@
         }
 
         .stat-value {
-            font-size: 28px;
-            font-weight: 800;
+            font-size: 24px;
+            font-weight: 700;
         }
 
         .stat-label {
-            font-size: 12px;
+            font-size: 11px;
             opacity: 0.8;
         }
 
@@ -611,15 +611,19 @@
             margin-bottom: 24px;
         }
 
+        .modal-input-wrapper {
+            position: relative;
+            margin-bottom: 16px;
+        }
+
         .modal-input {
             width: 100%;
-            padding: 14px 18px;
+            padding: 14px 50px 14px 18px;
             font-size: 18px;
             border: 2px solid #e2e8f0;
             border-radius: 10px;
             text-align: center;
             letter-spacing: 4px;
-            margin-bottom: 16px;
             transition: border-color 0.2s;
         }
 
@@ -630,6 +634,23 @@
 
         .modal-input.error {
             border-color: #ef4444;
+        }
+
+        .toggle-visibility {
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            color: var(--gray);
+            padding: 4px;
+        }
+
+        .toggle-visibility:hover {
+            color: var(--primary);
         }
 
         .modal-error {
@@ -950,12 +971,17 @@
         <div class="modal-box">
             <h3>🔐 Sales Key Required</h3>
             <p>Please enter your sales key to access the demo</p>
-            <input type="text" 
-                   class="modal-input" 
-                   id="salesKeyInput" 
-                   placeholder="Enter key"
-                   maxlength="10"
-                   autocomplete="off">
+            <div class="modal-input-wrapper">
+                <input type="password" 
+                       class="modal-input" 
+                       id="salesKeyInput" 
+                       placeholder="Enter key"
+                       maxlength="10"
+                       autocomplete="off">
+                <button type="button" class="toggle-visibility" onclick="toggleKeyVisibility()" title="Show/Hide">
+                    👁️
+                </button>
+            </div>
             <div class="modal-error" id="modalError">
                 Invalid key. Please contact us at <strong>contact@consentaxis.com</strong> and our sales team will schedule a demo walkthrough at your convenience.
             </div>
@@ -985,6 +1011,18 @@
 
         function closeSalesKeyModal() {
             document.getElementById('salesKeyModal').classList.remove('active');
+        }
+
+        function toggleKeyVisibility() {
+            const input = document.getElementById('salesKeyInput');
+            const btn = document.querySelector('.toggle-visibility');
+            if (input.type === 'password') {
+                input.type = 'text';
+                btn.textContent = '🙈';
+            } else {
+                input.type = 'password';
+                btn.textContent = '👁️';
+            }
         }
 
         async function validateSalesKey() {
