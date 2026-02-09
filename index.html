@@ -66,11 +66,7 @@
         .logo-icon {
             width: 56px;
             height: 56px;
-            border-radius: 50%;
-            border: 2px solid #e2e8f0;
             object-fit: contain;
-            padding: 4px;
-            background: white;
         }
 
         .logo-text {
@@ -182,11 +178,7 @@
         .hero-left .logo-icon-large {
             width: 72px;
             height: 72px;
-            border-radius: 50%;
-            border: 3px solid rgba(255,255,255,0.3);
             object-fit: contain;
-            padding: 6px;
-            background: white;
         }
 
         .hero-left .logo-name {
@@ -207,6 +199,28 @@
             opacity: 0.9;
             margin-bottom: 32px;
             line-height: 1.6;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 32px;
+            margin-top: auto;
+            padding-top: 32px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 28px;
+            font-weight: 800;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            opacity: 0.8;
         }
 
         .hero-features {
@@ -275,6 +289,19 @@
         .hero-right > p {
             color: var(--gray);
             margin-bottom: 32px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #dbeafe;
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 24px;
         }
 
         .demo-buttons {
@@ -724,7 +751,7 @@
         </div>
     </header>
 
-    <!-- Main Content Box (like app.consentaxis.com) -->
+    <!-- Main Content Box -->
     <main class="main-content">
         <!-- Left Panel - Blue -->
         <div class="hero-left">
@@ -732,30 +759,31 @@
                 <img src="logo.png" alt="ConsentAxis" class="logo-icon-large">
                 <span class="logo-name">ConsentAxis</span>
             </div>
-            <h1>Your Privacy,<br>Our Priority</h1>
-            <p>Take control of your organization's data compliance with our comprehensive privacy management platform built for India's DPDP Act 2023.</p>
-            <ul class="hero-features">
-                <li><span class="check-icon">✓</span> Manage consent preferences</li>
-                <li><span class="check-icon">✓</span> Submit data access requests</li>
-                <li><span class="check-icon">✓</span> View privacy notices & updates</li>
-                <li><span class="check-icon">✓</span> GDPR & DPDP compliance</li>
-            </ul>
-            <div class="trusted-section">
-                <p>Trusted by organizations across India</p>
-                <div class="trusted-logos">
-                    <span>🏢</span>
-                    <span>🏛️</span>
-                    <span>🏥</span>
-                    <span>🏦</span>
-                    <span>🏫</span>
+            <h1>Privacy Compliance<br>Made Simple</h1>
+            <p>The all-in-one platform to manage consent, privacy notices, data subject requests, and audit trails. Stay compliant with DPDP & GDPR effortlessly.</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-value">100%</div>
+                    <div class="stat-label">DPDP Compliant</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">5+</div>
+                    <div class="stat-label">Core Modules</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">24/7</div>
+                    <div class="stat-label">Audit Trail</div>
                 </div>
             </div>
         </div>
 
         <!-- Right Panel -->
         <div class="hero-right">
-            <h2>Welcome</h2>
-            <p>Experience the future of privacy compliance</p>
+            <div class="hero-badge">
+                🇮🇳 Built for India's DPDP Act 2023
+            </div>
+            <h2>Get Started</h2>
+            <p>See ConsentAxis in action with our live demo</p>
             <div class="demo-buttons">
                 <button class="btn btn-primary btn-large" onclick="openSalesKeyModal()">
                     Launch Demo →
@@ -765,12 +793,8 @@
                 </a>
             </div>
             <div class="contact-note">
-                Questions? Contact us at<br>
+                Or contact us at<br>
                 <a href="mailto:contact@consentaxis.com">contact@consentaxis.com</a>
-            </div>
-            <div class="secure-badge">
-                <h4>🔒 Your privacy is protected</h4>
-                <p>We use industry-standard security measures to protect your personal information and ensure compliance with global privacy regulations.</p>
             </div>
         </div>
     </main>
@@ -978,7 +1002,7 @@
             
             // Expected hash (SHA-256 of valid key - key is NOT visible in code)
             // Pre-computed hash for security
-            const expectedHash = '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5';
+            const expectedHash = 'd38c1b42db326f9462884fa8c33c20b9739ad8d8f06c6698d40927b53ec3ebdf';
             
             if (enteredHash === expectedHash) {
                 // Success - redirect to demo
