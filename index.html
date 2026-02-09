@@ -28,7 +28,7 @@
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             color: var(--dark);
             line-height: 1.6;
-            background: var(--white);
+            background: #f0f4f8;
         }
 
         .container {
@@ -37,42 +37,57 @@
             padding: 0 24px;
         }
 
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            border-bottom: 1px solid #e2e8f0;
+        /* Header - matching app.consentaxis.com */
+        .header-box {
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            margin: 20px auto;
+            max-width: 1200px;
+            padding: 16px 32px;
         }
 
         .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 16px 24px;
-            max-width: 1200px;
-            margin: 0 auto;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-size: 24px;
-            font-weight: 800;
+            gap: 12px;
+            font-size: 20px;
+            font-weight: 700;
             color: var(--dark);
             text-decoration: none;
         }
 
         .logo-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 10px;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            border: 2px solid #e2e8f0;
             object-fit: contain;
+            padding: 4px;
+            background: white;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .logo-subtitle {
+            font-size: 12px;
+            color: var(--gray);
+            font-weight: 400;
         }
 
         .nav-links {
@@ -133,89 +148,206 @@
             font-size: 18px;
         }
 
-        /* Hero Section */
-        .hero {
-            padding: 160px 0 100px;
-            background: linear-gradient(180deg, #f0f9ff 0%, #ffffff 100%);
-            text-align: center;
+        /* Main Content Box - matching app.consentaxis.com */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            min-height: 500px;
         }
 
-        .hero-badge {
-            display: inline-flex;
+        /* Hero Left Panel - Blue gradient like app.consentaxis */
+        .hero-left {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            color: white;
+            padding: 60px 48px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero-left .logo-section {
+            display: flex;
             align-items: center;
-            gap: 8px;
-            background: #dbeafe;
-            color: var(--primary);
-            padding: 8px 16px;
-            border-radius: 50px;
-            font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 24px;
+            gap: 12px;
+            margin-bottom: 40px;
         }
 
-        .hero h1 {
-            font-size: 56px;
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 24px;
-            background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .hero-left .logo-icon-large {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            border: 3px solid rgba(255,255,255,0.3);
+            object-fit: contain;
+            padding: 6px;
+            background: white;
         }
 
-        .hero p {
-            font-size: 20px;
-            color: var(--gray);
-            max-width: 600px;
-            margin: 0 auto 40px;
+        .hero-left .logo-name {
+            font-size: 22px;
+            font-weight: 700;
+            color: white;
         }
 
-        .hero-buttons {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 60px;
-            margin-top: 80px;
-            padding-top: 40px;
-            border-top: 1px solid #e2e8f0;
-        }
-
-        .stat {
-            text-align: center;
-        }
-
-        .stat-value {
+        .hero-left h1 {
             font-size: 36px;
             font-weight: 800;
-            color: var(--primary);
+            line-height: 1.2;
+            margin-bottom: 16px;
         }
 
-        .stat-label {
+        .hero-left p {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+
+        .hero-features {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+
+        .hero-features li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            font-size: 15px;
+        }
+
+        .check-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 6px;
+            font-size: 14px;
+            color: #4ade80;
+        }
+
+        .trusted-section {
+            margin-top: auto;
+            padding-top: 32px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .trusted-section p {
+            font-size: 13px;
+            opacity: 0.7;
+            margin-bottom: 16px;
+        }
+
+        .trusted-logos {
+            display: flex;
+            gap: 16px;
+        }
+
+        .trusted-logos span {
+            font-size: 24px;
+        }
+
+        /* Hero Right Panel */
+        .hero-right {
+            padding: 60px 48px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-right h2 {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 12px;
+        }
+
+        .hero-right > p {
+            color: var(--gray);
+            margin-bottom: 32px;
+        }
+
+        .demo-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .demo-buttons .btn {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .hero-right .contact-note {
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid #e2e8f0;
             font-size: 14px;
             color: var(--gray);
-            margin-top: 4px;
+        }
+
+        .hero-right .contact-note a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .secure-badge {
+            margin-top: 24px;
+            padding: 16px;
+            background: #f0f9ff;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .secure-badge h4 {
+            font-size: 14px;
+            color: var(--dark);
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .secure-badge p {
+            font-size: 12px;
+            color: var(--gray);
+            line-height: 1.5;
         }
 
         /* Features Section */
         .features {
-            padding: 100px 0;
+            padding: 80px 0;
+        }
+
+        .section-box {
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            padding: 48px;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 48px;
         }
 
         .section-header h2 {
-            font-size: 40px;
+            font-size: 36px;
             font-weight: 800;
+            color: var(--dark);
             margin-bottom: 16px;
         }
 
@@ -228,33 +360,31 @@
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 32px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
         }
 
         .feature-card {
-            background: var(--white);
-            border: 1px solid #e2e8f0;
-            border-radius: 16px;
             padding: 32px;
+            border-radius: 16px;
+            background: var(--light);
             transition: all 0.3s;
         }
 
         .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
         }
 
         .feature-icon {
             width: 56px;
             height: 56px;
-            background: linear-gradient(135deg, #dbeafe, #bfdbfe);
-            border-radius: 12px;
+            background: linear-gradient(135deg, var(--primary), #60a5fa);
+            border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 28px;
+            font-size: 24px;
             margin-bottom: 20px;
         }
 
@@ -262,6 +392,7 @@
             font-size: 20px;
             font-weight: 700;
             margin-bottom: 12px;
+            color: var(--dark);
         }
 
         .feature-card p {
@@ -269,81 +400,96 @@
             font-size: 15px;
         }
 
-        .feature-card ul {
-            margin-top: 16px;
-            padding-left: 20px;
-        }
-
-        .feature-card li {
-            color: var(--gray);
-            font-size: 14px;
-            margin-bottom: 8px;
-        }
-
-        /* DPDP Section */
+        /* DPDP Compliance Section */
         .dpdp-section {
-            padding: 100px 0;
-            background: var(--dark);
-            color: white;
+            padding: 80px 0;
         }
 
-        .dpdp-section h2 {
-            font-size: 40px;
+        .dpdp-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .dpdp-header h2 {
+            font-size: 36px;
             font-weight: 800;
-            margin-bottom: 24px;
+            color: var(--dark);
+            margin-bottom: 16px;
         }
 
-        .dpdp-section p {
+        .dpdp-header p {
             font-size: 18px;
-            opacity: 0.8;
-            margin-bottom: 40px;
-            max-width: 600px;
+            color: var(--gray);
         }
 
         .dpdp-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 24px;
-            margin-top: 40px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
         }
 
         .dpdp-item {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
+            background: var(--white);
             padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
         }
 
         .dpdp-item h4 {
-            font-size: 18px;
+            font-size: 16px;
+            font-weight: 600;
             margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            color: var(--dark);
         }
 
         .dpdp-item p {
             font-size: 14px;
-            opacity: 0.7;
-            margin-bottom: 0;
+            color: var(--gray);
         }
 
         /* CTA Section */
         .cta {
-            padding: 100px 0;
-            text-align: center;
-            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            padding: 80px 0;
         }
 
-        .cta h2 {
-            font-size: 40px;
+        .cta-box {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 16px;
+            padding: 60px;
+            text-align: center;
+            color: white;
+        }
+
+        .cta-box h2 {
+            font-size: 36px;
             font-weight: 800;
             margin-bottom: 16px;
         }
 
-        .cta p {
+        .cta-box > p {
             font-size: 18px;
-            color: var(--gray);
+            opacity: 0.9;
             margin-bottom: 32px;
+        }
+
+        .cta-box .btn-primary {
+            background: white;
+            color: var(--primary);
+        }
+
+        .cta-box .btn-primary:hover {
+            background: #f0f9ff;
+        }
+
+        .cta-box .contact-note {
+            margin-top: 24px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        .cta-box .contact-note a {
+            color: white;
+            text-decoration: underline;
         }
 
         /* Footer */
@@ -351,6 +497,7 @@
             background: var(--dark);
             color: white;
             padding: 60px 0 30px;
+            margin-top: 40px;
         }
 
         .footer-content {
@@ -360,18 +507,20 @@
             margin-bottom: 40px;
         }
 
+        .footer-brand .logo {
+            color: white;
+            margin-bottom: 16px;
+        }
+
         .footer-brand p {
-            opacity: 0.7;
-            margin-top: 16px;
+            color: rgba(255, 255, 255, 0.7);
             font-size: 14px;
         }
 
         .footer-links h4 {
-            font-size: 14px;
+            font-size: 16px;
             font-weight: 600;
-            margin-bottom: 16px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            margin-bottom: 20px;
         }
 
         .footer-links a {
@@ -395,27 +544,147 @@
             opacity: 0.6;
         }
 
+        /* Sales Key Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-box {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            max-width: 420px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal-box h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--dark);
+        }
+
+        .modal-box > p {
+            color: var(--gray);
+            margin-bottom: 24px;
+        }
+
+        .modal-input {
+            width: 100%;
+            padding: 14px 18px;
+            font-size: 18px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            text-align: center;
+            letter-spacing: 4px;
+            margin-bottom: 16px;
+            transition: border-color 0.2s;
+        }
+
+        .modal-input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .modal-input.error {
+            border-color: #ef4444;
+        }
+
+        .modal-error {
+            display: none;
+            background: #fef2f2;
+            color: #dc2626;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+
+        .modal-error.active {
+            display: block;
+        }
+
+        .modal-buttons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .modal-buttons .btn {
+            flex: 1;
+        }
+
+        .btn-secondary {
+            background: #f1f5f9;
+            color: var(--gray);
+        }
+
+        .btn-secondary:hover {
+            background: #e2e8f0;
+        }
+
         /* Responsive */
+        @media (max-width: 968px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid, .dpdp-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 36px;
+            .header-box {
+                margin: 10px;
+                padding: 12px 16px;
             }
 
             .nav-links {
                 display: none;
             }
 
-            .hero-stats {
-                flex-direction: column;
-                gap: 30px;
+            .hero-left, .hero-right {
+                padding: 40px 24px;
+            }
+
+            .hero-left h1 {
+                font-size: 28px;
+            }
+
+            .features-grid, .dpdp-grid {
+                grid-template-columns: 1fr;
             }
 
             .footer-content {
                 grid-template-columns: 1fr;
             }
 
-            .section-header h2, .cta h2, .dpdp-section h2 {
+            .section-header h2, .cta-box h2, .dpdp-header h2 {
                 font-size: 28px;
+            }
+
+            .section-box {
+                padding: 24px;
             }
         }
 
@@ -431,21 +700,21 @@
             }
         }
 
-        .hero h1, .hero p, .hero-buttons, .feature-card {
+        .main-content, .section-box, .feature-card {
             animation: fadeInUp 0.6s ease-out forwards;
         }
-
-        .hero p { animation-delay: 0.1s; }
-        .hero-buttons { animation-delay: 0.2s; }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
+    <!-- Header Box -->
+    <header class="header-box">
         <div class="nav-container">
             <a href="#" class="logo">
                 <img src="logo.png" alt="ConsentAxis" class="logo-icon">
-                ConsentAxis
+                <div class="logo-text">
+                    <span class="logo-title">ConsentAxis</span>
+                    <span class="logo-subtitle">DPDP Compliance Platform</span>
+                </div>
             </a>
             <div class="nav-links">
                 <a href="#features">Features</a>
@@ -453,89 +722,98 @@
                 <a href="#contact">Contact</a>
             </div>
         </div>
-    </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-badge">
-                🇮🇳 Built for India's DPDP Act 2023
+    <!-- Main Content Box (like app.consentaxis.com) -->
+    <main class="main-content">
+        <!-- Left Panel - Blue -->
+        <div class="hero-left">
+            <div class="logo-section">
+                <img src="logo.png" alt="ConsentAxis" class="logo-icon-large">
+                <span class="logo-name">ConsentAxis</span>
             </div>
-            <h1>Privacy Compliance<br>Made Simple</h1>
-            <p>The all-in-one platform to manage consent, privacy notices, data subject requests, and audit trails. Stay compliant with DPDP & GDPR effortlessly.</p>
-            <div class="hero-buttons">
-                <a href="https://app.consentaxis.com" class="btn btn-primary btn-large">
+            <h1>Your Privacy,<br>Our Priority</h1>
+            <p>Take control of your organization's data compliance with our comprehensive privacy management platform built for India's DPDP Act 2023.</p>
+            <ul class="hero-features">
+                <li><span class="check-icon">✓</span> Manage consent preferences</li>
+                <li><span class="check-icon">✓</span> Submit data access requests</li>
+                <li><span class="check-icon">✓</span> View privacy notices & updates</li>
+                <li><span class="check-icon">✓</span> GDPR & DPDP compliance</li>
+            </ul>
+            <div class="trusted-section">
+                <p>Trusted by organizations across India</p>
+                <div class="trusted-logos">
+                    <span>🏢</span>
+                    <span>🏛️</span>
+                    <span>🏥</span>
+                    <span>🏦</span>
+                    <span>🏫</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Panel -->
+        <div class="hero-right">
+            <h2>Welcome</h2>
+            <p>Experience the future of privacy compliance</p>
+            <div class="demo-buttons">
+                <button class="btn btn-primary btn-large" onclick="openSalesKeyModal()">
                     Launch Demo →
-                </a>
+                </button>
                 <a href="#features" class="btn btn-outline btn-large">
                     Explore Features
                 </a>
             </div>
-            <div class="hero-stats">
-                <div class="stat">
-                    <div class="stat-value">100%</div>
-                    <div class="stat-label">DPDP Compliant</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-value">5+</div>
-                    <div class="stat-label">Core Modules</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-value">24/7</div>
-                    <div class="stat-label">Audit Trail</div>
-                </div>
+            <div class="contact-note">
+                Questions? Contact us at<br>
+                <a href="mailto:contact@consentaxis.com">contact@consentaxis.com</a>
+            </div>
+            <div class="secure-badge">
+                <h4>🔒 Your privacy is protected</h4>
+                <p>We use industry-standard security measures to protect your personal information and ensure compliance with global privacy regulations.</p>
             </div>
         </div>
-    </section>
+    </main>
 
     <!-- Features Section -->
     <section class="features" id="features">
         <div class="container">
-            <div class="section-header">
-                <h2>Everything You Need for Privacy Compliance</h2>
-                <p>A comprehensive platform designed specifically for India's Digital Personal Data Protection Act</p>
-            </div>
-            <div class="features-grid">
-                <!-- Consent Management -->
-                <div class="feature-card">
-                    <div class="feature-icon">✅</div>
-                    <h3>Consent Management</h3>
-                    <p>Capture, track, and manage user consent across all touchpoints with complete audit trails and version control.</p>
+            <div class="section-box">
+                <div class="section-header">
+                    <h2>Everything You Need for Privacy Compliance</h2>
+                    <p>A comprehensive platform designed specifically for India's Digital Personal Data Protection Act</p>
                 </div>
-
-                <!-- Notice Management -->
-                <div class="feature-card">
-                    <div class="feature-icon">📋</div>
-                    <h3>Notice Management</h3>
-                    <p>Create, version, and deploy privacy notices with multi-language support (EN/HI) and dynamic rendering.</p>
-                </div>
-
-                <!-- DSAR Management -->
-                <div class="feature-card">
-                    <div class="feature-icon">📨</div>
-                    <h3>DSAR Management</h3>
-                    <p>Handle Data Subject Access Requests efficiently with automated workflows and SLA tracking.</p>
-                </div>
-
-                <!-- Personal Info Management -->
-                <div class="feature-card">
-                    <div class="feature-icon">👤</div>
-                    <h3>Personal Info Management</h3>
-                    <p>Give users full control over their personal data with self-service profile management and data export.</p>
-                </div>
-
-                <!-- Audit & Compliance -->
-                <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3>Audit & Compliance</h3>
-                    <p>Immutable audit logs with blockchain-style chaining for complete regulatory compliance and reporting.</p>
-                </div>
-
-                <!-- Admin Dashboard -->
-                <div class="feature-card">
-                    <div class="feature-icon">⚙️</div>
-                    <h3>Admin Dashboard</h3>
-                    <p>Powerful admin tools to manage users, monitor compliance, and generate reports with real-time analytics.</p>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <h3>Consent Management</h3>
+                        <p>Capture, store, and manage user consent with granular purpose-based controls and easy withdrawal mechanisms.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📋</div>
+                        <h3>Privacy Notices</h3>
+                        <p>Create and deploy customizable privacy notices with version control and user acknowledgment tracking.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📝</div>
+                        <h3>DSAR Management</h3>
+                        <p>Handle Data Subject Access Requests efficiently with automated workflows and compliance timelines.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔍</div>
+                        <h3>Audit Trail</h3>
+                        <p>Immutable, tamper-proof audit logs for all privacy-related activities with cryptographic verification.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">👤</div>
+                        <h3>User Portal</h3>
+                        <p>Self-service portal for data subjects to view their data, manage consent, and submit requests.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚙️</div>
+                        <h3>Admin Dashboard</h3>
+                        <p>Comprehensive admin interface for managing users, processing requests, and monitoring compliance.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -544,40 +822,48 @@
     <!-- DPDP Compliance Section -->
     <section class="dpdp-section" id="compliance">
         <div class="container">
-            <h2>Built for DPDP Act 2023</h2>
-            <p>ConsentAxis is designed from the ground up to meet all requirements of India's Digital Personal Data Protection Act.</p>
-            <div class="dpdp-grid">
-                <div class="dpdp-item">
-                    <h4>📜 Section 5 - Notice</h4>
-                    <p>Itemised description of personal data & purpose before collection</p>
+            <div class="section-box">
+                <div class="dpdp-header">
+                    <h2>Built for DPDP Act 2023</h2>
+                    <p>Every feature maps directly to regulatory requirements</p>
                 </div>
-                <div class="dpdp-item">
-                    <h4>✅ Section 6 - Consent</h4>
-                    <p>Free, specific, informed, unconditional, and unambiguous consent</p>
-                </div>
-                <div class="dpdp-item">
-                    <h4>🔄 Section 6(4) - Withdrawal</h4>
-                    <p>Easy consent withdrawal, as simple as giving consent</p>
-                </div>
-                <div class="dpdp-item">
-                    <h4>📂 Section 11 - Access</h4>
-                    <p>Right to access personal data and processing information</p>
-                </div>
-                <div class="dpdp-item">
-                    <h4>✏️ Section 12 - Correction</h4>
-                    <p>Right to correction and erasure of personal data</p>
-                </div>
-                <div class="dpdp-item">
-                    <h4>🗑️ Section 12 - Erasure</h4>
-                    <p>Right to erasure when consent withdrawn or purpose fulfilled</p>
-                </div>
-                <div class="dpdp-item">
-                    <h4>👶 Section 9 - Children</h4>
-                    <p>Verifiable parental consent for processing children's data</p>
-                </div>
-                <div class="dpdp-item">
-                    <h4>📋 Section 8 - Records</h4>
-                    <p>Maintain accurate records of all processing activities</p>
+                <div class="dpdp-grid">
+                    <div class="dpdp-item">
+                        <h4>📜 Section 5 - Notice</h4>
+                        <p>Clear itemized notice before collecting personal data</p>
+                    </div>
+                    <div class="dpdp-item">
+                        <h4>✅ Section 6 - Consent</h4>
+                        <p>Free, specific, informed consent with clear affirmative action</p>
+                    </div>
+                    <div class="dpdp-item">
+                        <h4>🔄 Section 6(4) - Withdrawal</h4>
+                        <p>Easy consent withdrawal, as simple as giving consent</p>
+                    </div>
+                    <div class="dpdp-item">
+                        <h4>📂 Section 11 - Access</h4>
+                        <p>Right to access personal data and processing information</p>
+                    </div>
+                    <div class="dpdp-item">
+                        <h4>✏️ Section 12 - Correction</h4>
+                        <p>Right to correction and erasure of personal data</p>
+                    </div>
+                    <div class="dpdp-item">
+                        <h4>🗑️ Section 12 - Erasure</h4>
+                        <p>Right to erasure when consent withdrawn or purpose fulfilled</p>
+                    </div>
+                    <div class="dpdp-item">
+                        <h4>👶 Section 9 - Children</h4>
+                        <p>Verifiable parental consent for processing children's data</p>
+                    </div>
+                    <div class="dpdp-item">
+                        <h4>📋 Section 8 - Records</h4>
+                        <p>Maintain accurate records of all processing activities</p>
+                    </div>
+                    <div class="dpdp-item">
+                        <h4>🔐 Security</h4>
+                        <p>Implement reasonable security safeguards</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -586,14 +872,16 @@
     <!-- CTA Section -->
     <section class="cta" id="contact">
         <div class="container">
-            <h2>Ready to Get Compliant?</h2>
-            <p>See ConsentAxis in action with our live demo environment</p>
-            <a href="https://app.consentaxis.com" class="btn btn-primary btn-large">
-                🚀 Launch Demo Now
-            </a>
-            <p style="margin-top: 24px; font-size: 14px;">
-                Or contact us at <a href="mailto:contact@consentaxis.com" style="color: var(--primary);">contact@consentaxis.com</a>
-            </p>
+            <div class="cta-box">
+                <h2>Ready to Get Compliant?</h2>
+                <p>See ConsentAxis in action with our live demo environment</p>
+                <button class="btn btn-primary btn-large" onclick="openSalesKeyModal()">
+                    🚀 Launch Demo Now
+                </button>
+                <p class="contact-note">
+                    Or contact us at <a href="mailto:contact@consentaxis.com">contact@consentaxis.com</a>
+                </p>
+            </div>
         </div>
     </section>
 
@@ -602,9 +890,9 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <a href="#" class="logo" style="color: white;">
+                    <a href="#" class="logo">
                         <img src="logo.png" alt="ConsentAxis" class="logo-icon">
-                        ConsentAxis
+                        <span class="logo-title" style="color: white;">ConsentAxis</span>
                     </a>
                     <p>India's privacy compliance platform. Built for DPDP Act 2023, ready for GDPR.</p>
                 </div>
@@ -612,7 +900,7 @@
                     <h4>Product</h4>
                     <a href="#features">Features</a>
                     <a href="#compliance">DPDP Compliance</a>
-                    <a href="https://app.consentaxis.com">Demo</a>
+                    <a href="#" onclick="openSalesKeyModal(); return false;">Demo</a>
                 </div>
                 <div class="footer-links">
                     <h4>Resources</h4>
@@ -633,7 +921,89 @@
         </div>
     </footer>
 
+    <!-- Sales Key Modal -->
+    <div class="modal-overlay" id="salesKeyModal">
+        <div class="modal-box">
+            <h3>🔐 Sales Key Required</h3>
+            <p>Please enter your sales key to access the demo</p>
+            <input type="text" 
+                   class="modal-input" 
+                   id="salesKeyInput" 
+                   placeholder="Enter key"
+                   maxlength="10"
+                   autocomplete="off">
+            <div class="modal-error" id="modalError">
+                Invalid key. Please contact us at <strong>contact@consentaxis.com</strong> and our sales team will schedule a demo walkthrough at your convenience.
+            </div>
+            <div class="modal-buttons">
+                <button class="btn btn-secondary" onclick="closeSalesKeyModal()">Cancel</button>
+                <button class="btn btn-primary" onclick="validateSalesKey()">Access Demo</button>
+            </div>
+        </div>
+    </div>
+
     <script>
+        // SHA-256 hash function using Web Crypto API
+        async function sha256(message) {
+            const msgBuffer = new TextEncoder().encode(message);
+            const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+        }
+
+        function openSalesKeyModal() {
+            document.getElementById('salesKeyModal').classList.add('active');
+            document.getElementById('salesKeyInput').value = '';
+            document.getElementById('salesKeyInput').classList.remove('error');
+            document.getElementById('modalError').classList.remove('active');
+            setTimeout(() => document.getElementById('salesKeyInput').focus(), 100);
+        }
+
+        function closeSalesKeyModal() {
+            document.getElementById('salesKeyModal').classList.remove('active');
+        }
+
+        async function validateSalesKey() {
+            const input = document.getElementById('salesKeyInput');
+            const errorDiv = document.getElementById('modalError');
+            const key = input.value.trim();
+            
+            if (!key) {
+                input.classList.add('error');
+                return;
+            }
+
+            // Hash the entered key
+            const enteredHash = await sha256(key);
+            
+            // Expected hash (SHA-256 of valid key - key is NOT visible in code)
+            // Pre-computed hash for security
+            const expectedHash = '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5';
+            
+            if (enteredHash === expectedHash) {
+                // Success - redirect to demo
+                window.location.href = 'https://app.consentaxis.com';
+            } else {
+                // Show error
+                input.classList.add('error');
+                errorDiv.classList.add('active');
+            }
+        }
+
+        // Allow Enter key to submit
+        document.getElementById('salesKeyInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                validateSalesKey();
+            }
+        });
+
+        // Close modal on overlay click
+        document.getElementById('salesKeyModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeSalesKeyModal();
+            }
+        });
+
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -643,16 +1013,6 @@
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
-        });
-
-        // Add scroll effect to nav
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
-            } else {
-                nav.style.boxShadow = 'none';
-            }
         });
     </script>
 </body>
