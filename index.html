@@ -71,13 +71,8 @@
         .logo-icon {
             width: 40px;
             height: 40px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
             border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 20px;
+            object-fit: contain;
         }
 
         .nav-links {
@@ -449,14 +444,13 @@
     <nav>
         <div class="nav-container">
             <a href="#" class="logo">
-                <div class="logo-icon">⚡</div>
+                <img src="logo.png" alt="ConsentAxis" class="logo-icon">
                 ConsentAxis
             </a>
             <div class="nav-links">
                 <a href="#features">Features</a>
                 <a href="#compliance">DPDP Compliance</a>
                 <a href="#contact">Contact</a>
-                <a href="https://app.consentaxis.com" class="btn btn-primary">Try Demo →</a>
             </div>
         </div>
     </nav>
@@ -609,7 +603,7 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <a href="#" class="logo" style="color: white;">
-                        <div class="logo-icon">⚡</div>
+                        <img src="logo.png" alt="ConsentAxis" class="logo-icon">
                         ConsentAxis
                     </a>
                     <p>India's privacy compliance platform. Built for DPDP Act 2023, ready for GDPR.</p>
