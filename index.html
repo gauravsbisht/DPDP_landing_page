@@ -432,6 +432,157 @@
             padding: 80px 0;
         }
 
+        /* Products Hero Section */
+        .products-hero {
+            padding: 40px 0 80px;
+        }
+
+        .hero-intro {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .hero-intro h1 {
+            font-size: 42px;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 16px;
+        }
+
+        .hero-intro > p {
+            font-size: 18px;
+            color: var(--gray);
+        }
+
+        .hero-contact {
+            text-align: center;
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .hero-contact p {
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        .hero-contact a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+        }
+
+        .product-card {
+            background: var(--light);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            border-color: var(--primary);
+        }
+
+        .product-card-header {
+            padding: 32px 32px 24px;
+            background: linear-gradient(135deg, var(--primary) 0%, #60a5fa 100%);
+            color: white;
+        }
+
+        .product-card-header.datacerebrium {
+            background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%);
+        }
+
+        .product-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .product-logo-img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.2);
+            padding: 4px;
+        }
+
+        .product-logo-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .product-logo-text {
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .product-card-header p {
+            font-size: 15px;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        .product-card-body {
+            padding: 28px 32px;
+        }
+
+        .product-features {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+
+        .product-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+            font-size: 14px;
+            color: var(--dark);
+        }
+
+        .product-features li span {
+            color: var(--secondary);
+            font-size: 16px;
+        }
+
+        .product-card-body .btn {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .product-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        @media (max-width: 768px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         .dpdp-header {
             text-align: center;
             margin-bottom: 48px;
@@ -766,59 +917,79 @@
             </a>
             <div class="nav-links">
                 <a href="#features">Features</a>
+                <a href="#products">Products</a>
                 <a href="#compliance">DPDP Compliance</a>
                 <a href="#contact">Contact</a>
             </div>
         </div>
     </header>
 
-    <!-- Main Content Box -->
-    <main class="main-content">
-        <!-- Left Panel - Blue -->
-        <div class="hero-left">
-            <div class="logo-section">
-                <img src="logo.png" alt="ConsentAxis" class="logo-icon-large">
-                <span class="logo-name">ConsentAxis</span>
-            </div>
-            <h1>Privacy Compliance<br>Made Simple</h1>
-            <p>The all-in-one platform to manage consent, privacy notices, data subject requests, and audit trails. Stay compliant with DPDP & GDPR effortlessly.</p>
-            <div class="hero-stats">
-                <div class="stat">
-                    <div class="stat-value">100%</div>
-                    <div class="stat-label">DPDP Compliant</div>
+    <!-- Products Section (Hero) -->
+    <section class="products-hero" id="products">
+        <div class="container">
+            <div class="section-box">
+                <div class="hero-intro">
+                    <div class="hero-badge">
+                        🇮🇳 Built for India's DPDP Act 2023
+                    </div>
+                    <h1>Privacy & Data Protection Suite</h1>
+                    <p>Complete privacy compliance and data discovery tools for modern enterprises</p>
                 </div>
-                <div class="stat">
-                    <div class="stat-value">5+</div>
-                    <div class="stat-label">Core Modules</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-value">24/7</div>
-                    <div class="stat-label">Audit Trail</div>
-                </div>
-            </div>
-        </div>
+                <div class="products-grid">
+                    <!-- ConsentAxis Portal -->
+                    <div class="product-card">
+                        <div class="product-card-header">
+                            <div class="product-logo">
+                                <img src="logo.png" alt="ConsentAxis" class="product-logo-img">
+                                <span class="product-logo-text">ConsentAxis</span>
+                            </div>
+                            <span class="product-badge">DPDP Compliance Platform</span>
+                            <p>Comprehensive consent management, privacy notices, DSARs, and audit trails - everything you need for DPDP compliance.</p>
+                        </div>
+                        <div class="product-card-body">
+                            <ul class="product-features">
+                                <li><span>✓</span> Consent collection & management</li>
+                                <li><span>✓</span> Privacy notice builder</li>
+                                <li><span>✓</span> DSAR workflow automation</li>
+                                <li><span>✓</span> Immutable audit trail</li>
+                                <li><span>✓</span> User self-service portal</li>
+                            </ul>
+                            <button class="btn btn-primary" onclick="openSalesKeyModal('consentaxis')">
+                                Launch Demo →
+                            </button>
+                        </div>
+                    </div>
 
-        <!-- Right Panel -->
-        <div class="hero-right">
-            <div class="hero-badge">
-                🇮🇳 Built for India's DPDP Act 2023
-            </div>
-            <h2>Get Started</h2>
-            <p>See ConsentAxis in action with our live demo</p>
-            <div class="demo-buttons">
-                <button class="btn btn-primary btn-large" onclick="openSalesKeyModal()">
-                    Launch Demo →
-                </button>
-                <a href="#features" class="btn btn-outline btn-large">
-                    Explore Features
-                </a>
-            </div>
-            <div class="contact-note">
-                Or contact us at<br>
-                <a href="mailto:contact@consentaxis.com">contact@consentaxis.com</a>
+                    <!-- DataCerebrium -->
+                    <div class="product-card">
+                        <div class="product-card-header datacerebrium">
+                            <div class="product-logo">
+                                <img src="datacerebrium-logo.png" alt="DataCerebrium" class="product-logo-img">
+                                <span class="product-logo-text">DataCerebrium</span>
+                            </div>
+                            <span class="product-badge">AI-Powered Data Discovery</span>
+                            <p>Automatically discover and classify PII across your databases using AI/ML. <br>Know where your sensitive data lives.</p>
+                        </div>
+                        <div class="product-card-body">
+                            <ul class="product-features">
+                                <li><span>✓</span> AI-powered PII detection</li>
+                                <li><span>✓</span> PostgreSQL & MySQL support</li>
+                                <li><span>✓</span> Risk scoring & classification</li>
+                                <li><span>✓</span> Detailed scan reports</li>
+                                <li><span>✓</span> Schema-level analysis</li>
+                            </ul>
+                            <button class="btn btn-primary" style="background: #8b5cf6;" onclick="openSalesKeyModal('datacerebrium')">
+                                Try DataCerebrium →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-contact">
+                    <p>Questions? Contact us at <a href="mailto:contact@consentaxis.com">contact@consentaxis.com</a></p>
+                </div>
             </div>
         </div>
-    </main>
+    </section>
 
     <!-- Features Section -->
     <section class="features" id="features">
@@ -919,10 +1090,15 @@
         <div class="container">
             <div class="cta-box">
                 <h2>Ready to Get Compliant?</h2>
-                <p>See ConsentAxis in action with our live demo environment</p>
-                <button class="btn btn-primary btn-large" onclick="openSalesKeyModal()">
-                    🚀 Launch Demo Now
-                </button>
+                <p>See our products in action with live demo environments</p>
+                <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                    <button class="btn btn-primary btn-large" onclick="openSalesKeyModal('consentaxis')" style="background: white; color: var(--primary);">
+                        🛡️ ConsentAxis Demo
+                    </button>
+                    <button class="btn btn-primary btn-large" onclick="openSalesKeyModal('datacerebrium')" style="background: #8b5cf6;">
+                        🧠 DataCerebrium Demo
+                    </button>
+                </div>
                 <p class="contact-note">
                     Or contact us at <a href="mailto:contact@consentaxis.com">contact@consentaxis.com</a>
                 </p>
@@ -944,8 +1120,10 @@
                 <div class="footer-links">
                     <h4>Product</h4>
                     <a href="#features">Features</a>
+                    <a href="#products">Products</a>
                     <a href="#compliance">DPDP Compliance</a>
-                    <a href="#" onclick="openSalesKeyModal(); return false;">Demo</a>
+                    <a href="#" onclick="openSalesKeyModal('consentaxis'); return false;">ConsentAxis Demo</a>
+                    <a href="#" onclick="openSalesKeyModal('datacerebrium'); return false;">DataCerebrium Demo</a>
                 </div>
                 <div class="footer-links">
                     <h4>Resources</h4>
@@ -1001,11 +1179,24 @@
             return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
         }
 
-        function openSalesKeyModal() {
+        // Track which product is being accessed
+        let currentProduct = 'consentaxis';
+
+        function openSalesKeyModal(product = 'consentaxis') {
+            currentProduct = product;
             document.getElementById('salesKeyModal').classList.add('active');
             document.getElementById('salesKeyInput').value = '';
             document.getElementById('salesKeyInput').classList.remove('error');
             document.getElementById('modalError').classList.remove('active');
+            
+            // Update modal title based on product
+            const modalTitle = document.querySelector('.modal-box h3');
+            if (product === 'datacerebrium') {
+                modalTitle.textContent = '🧠 Sales Key Required';
+            } else {
+                modalTitle.textContent = '🔐 Sales Key Required';
+            }
+            
             setTimeout(() => document.getElementById('salesKeyInput').focus(), 100);
         }
 
@@ -1043,8 +1234,12 @@
             const expectedHash = 'd38c1b42db326f9462884fa8c33c20b9739ad8d8f06c6698d40927b53ec3ebdf';
             
             if (enteredHash === expectedHash) {
-                // Success - redirect to demo
-                window.location.href = 'https://app.consentaxis.com';
+                // Success - redirect based on product
+                if (currentProduct === 'datacerebrium') {
+                    window.location.href = 'https://kind-tree-0ec2f2700.2.azurestaticapps.net';
+                } else {
+                    window.location.href = 'https://app.consentaxis.com';
+                }
             } else {
                 // Show error
                 input.classList.add('error');
