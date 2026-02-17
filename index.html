@@ -567,6 +567,56 @@
             justify-content: center;
         }
 
+        .product-video {
+            margin-bottom: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            background: #000;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .product-video video {
+            width: 100%;
+            display: block;
+            border-radius: 10px;
+        }
+
+        .product-video .play-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0,0,0,0.25);
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .product-video .play-overlay svg {
+            width: 56px;
+            height: 56px;
+            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+        }
+
+        .product-video.playing .play-overlay {
+            opacity: 0;
+        }
+
+        .product-video:hover .play-overlay {
+            background: rgba(0,0,0,0.15);
+        }
+
+        .video-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
         .product-badge {
             display: inline-block;
             background: rgba(255,255,255,0.2);
@@ -954,6 +1004,15 @@
                                 <li><span>✓</span> Immutable audit trail</li>
                                 <li><span>✓</span> User self-service portal</li>
                             </ul>
+                            <div class="video-label">▶ Watch Intro</div>
+                            <div class="product-video" onclick="toggleVideo(this)">
+                                <video preload="none" muted playsinline poster="resources/consentAxis.png">
+                                    <source src="resources/ConsentAxis_Video.mp4" type="video/mp4">
+                                </video>
+                                <div class="play-overlay">
+                                    <svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="38" fill="rgba(255,255,255,0.9)"/><polygon points="32,24 32,56 58,40" fill="#2563eb"/></svg>
+                                </div>
+                            </div>
                             <button class="btn btn-primary" onclick="openSalesKeyModal('consentaxis')">
                                 Launch Demo →
                             </button>
@@ -978,6 +1037,15 @@
                                 <li><span>✓</span> Detailed scan reports</li>
                                 <li><span>✓</span> Schema-level analysis</li>
                             </ul>
+                            <div class="video-label">▶ Watch Intro</div>
+                            <div class="product-video" onclick="toggleVideo(this)">
+                                <video preload="none" muted playsinline poster="resources/dataCerebrium.png">
+                                    <source src="resources/DataCerebrium_Video.mp4" type="video/mp4">
+                                </video>
+                                <div class="play-overlay">
+                                    <svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="38" fill="rgba(255,255,255,0.9)"/><polygon points="32,24 32,56 58,40" fill="#8b5cf6"/></svg>
+                                </div>
+                            </div>
                             <button class="btn btn-primary" style="background: #8b5cf6;" onclick="openSalesKeyModal('datacerebrium')">
                                 Try DataCerebrium →
                             </button>
@@ -1171,6 +1239,35 @@
     </div>
 
     <script>
+        // Video play/pause toggle
+        function toggleVideo(container) {
+            const video = container.querySelector('video');
+            if (video.paused) {
+                // Pause all other videos first
+                document.querySelectorAll('.product-video video').forEach(v => {
+                    if (v !== video) {
+                        v.pause();
+                        v.parentElement.classList.remove('playing');
+                    }
+                });
+                video.muted = false;
+                video.play();
+                container.classList.add('playing');
+            } else {
+                video.pause();
+                container.classList.remove('playing');
+            }
+        }
+
+        // Reset play overlay when video ends
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.product-video video').forEach(video => {
+                video.addEventListener('ended', () => {
+                    video.parentElement.classList.remove('playing');
+                });
+            });
+        });
+
         // SHA-256 hash function using Web Crypto API
         async function sha256(message) {
             const msgBuffer = new TextEncoder().encode(message);
